@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View ,TouchableOpacity} from "react-native";
-import { NativeBaseProvider, FormControl, Input,  } from 'native-base';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { NativeBaseProvider, FormControl, Input } from 'native-base';
 import { SvgXml } from 'react-native-svg';
+//import Navigation from '../navigation/Navigation';
 
-export default function StartGame({navigation}){
+export default function StartGame({ navigation }: any): any {
   const [userName, setUserName] = useState('');
-const xml = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+  const xml = `<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
  preserveAspectRatio="xMidYMid meet">
 
@@ -166,64 +167,73 @@ fill="#000000" stroke="none">
 </g>
 </svg>`;
 
-const Tic_Tac_Toe_Cover = () => (
-  <SvgXml xml={xml} width="100%" height="100%" />
-) 
-const pressClickHandler = () => {
+  const Tic_Tac_Toe_Cover = () => <SvgXml xml={xml} width="100%" height="100%" />;
+  const pressClickHandler = () => {
     console.log('You have been clicked a button!');
     navigation.navigate('Game', {
-              paramKey: userName,
-            }); 
+      paramKey: userName,
+    });
   };
 
-return( 
-  <View style={styles.container}> 
-     <View style={{flex: 1, backgroundColor: "white",  justifyContent: 'center',
-alignItems: 'center' }} > 
-      <Tic_Tac_Toe_Cover /> 
-     </View>
-    <View style={{flex: 2, backgroundColor: "#27bdac",
-    }} > 
-       <NativeBaseProvider >
-         <FormControl style={styles.form}>
-           <Input placeholder="Player's Name"   value={userName}
-          onChangeText={(username) => setUserName(username)} borderRadius = '10' padding='3' backgroundColor='white' marginBottom='5' />
-              <TouchableOpacity  onPress={pressClickHandler} style={styles.roundButton}>
-                 <Text style={styles.start}>Start Game</Text>
-             </TouchableOpacity> 
-        </FormControl>
-      </NativeBaseProvider>
+  return (
+    <View style={styles.container}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: 'white',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Tic_Tac_Toe_Cover />
+      </View>
+      <View style={{ flex: 2, backgroundColor: '#27bdac' }}>
+        <NativeBaseProvider>
+          <FormControl style={styles.form}>
+            <Input
+              placeholder="Player's Name"
+              value={userName}
+              onChangeText={(username) => setUserName(username)}
+              borderRadius="10"
+              padding="3"
+              backgroundColor="white"
+              marginBottom="5"
+            />
+            <TouchableOpacity onPress={pressClickHandler} style={styles.roundButton}>
+              <Text style={styles.start}>Start Game</Text>
+            </TouchableOpacity>
+          </FormControl>
+        </NativeBaseProvider>
+      </View>
     </View>
- </View>
-    )
-  }
+  );
+}
 
 const styles = StyleSheet.create({
-container: {
-    flex:1, 
-  }, 
-form:{
-    flex:1,
-    justifyContent: 'center',
-    padding:30,
+  container: {
+    flex: 1,
   },
-roundButton:{
+  form: {
+    flex: 1,
     justifyContent: 'center',
-    alignSelf:'center',
+    padding: 30,
+  },
+  roundButton: {
+    justifyContent: 'center',
+    alignSelf: 'center',
     width: 110,
     height: 110,
     padding: 10,
     borderRadius: 100,
-    backgroundColor:'white',
+    backgroundColor: 'white',
     shadowColor: 'black',
-    shadowOffset: {width: 0.2, height: 0.5},
+    shadowOffset: { width: 0.2, height: 0.5 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 1,
   },
-start:{ 
-    alignSelf:'center',
-    fontWeight:'bold',    
-  }
+  start: {
+    alignSelf: 'center',
+    fontWeight: 'bold',
+  },
 });
-
