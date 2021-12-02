@@ -14,9 +14,10 @@ const Row = () => {
   );
 };
 
-export default const Board = ({ route }: any): any => {
+export default function Board({ route }: any): any {
   return (
     <View style={styles.container}>
+      {/* comment out chat */}
       <Chat />
       <Text style={styles.player}>Player: {route.params.paramKey} </Text>
       <View style={styles.board}>
@@ -27,7 +28,7 @@ export default const Board = ({ route }: any): any => {
       <FontAwesomeIcon icon={faComment} size={70} style={styles.icon} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
