@@ -19,10 +19,23 @@ export default function Board({ route }: any): any {
     console.log('Clicked box');
   };
 
+<<<<<<< HEAD
   const Box = () => {
     return (
       <View style={styles.box}>
         <Round />
+=======
+export default function Board({ route }: any): any {
+  return (
+    <View style={styles.container}>
+      {/* comment out chat */}
+      <Chat />
+      <Text style={styles.player}>Player: {route.params.paramKey} </Text>
+      <View style={styles.board}>
+        <Row />
+        <Row />
+        <Row />
+>>>>>>> master
       </View>
     );
   };
