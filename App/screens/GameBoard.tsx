@@ -14,7 +14,6 @@ import { faComment } from '@fortawesome/free-solid-svg-icons';
 import Round from './Circle';
 // import Box from './Box';
 
-<<<<<<< HEAD
 export default function Board({ route }: any): any {
   const handleEvent: any = (): any => {
     console.log('Clicked box');
@@ -24,31 +23,6 @@ export default function Board({ route }: any): any {
     return (
       <View style={styles.box}>
         <Round />
-=======
-// ./components/theme.tsx for css constants
-// reusable components in ./compoments folder, add to them or use as they are
-
-const Row = () => {
-  return (
-    <View style={styles.row}>
-      <View style={styles.box} />
-      <View style={styles.box} />
-      <View style={styles.box} />
-    </View>
-  );
-};
-
-export default function Board({ route }: any): any {
-  return (
-    <View style={styles.container}>
-      {/* comment out chat */}
-      <Chat />
-      <Text style={styles.player}>Player: {route.params.paramKey} </Text>
-      <View style={styles.board}>
-        <Row />
-        <Row />
-        <Row />
->>>>>>> master
       </View>
     );
   };
