@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 // import Chat from './Chat/Chat';
 import Round from './Circle';
+import Chat from './Chat/Chat';
 // import Box from './Box';
 
 export default function Board({ route }: any): any {
@@ -44,7 +45,10 @@ export default function Board({ route }: any): any {
     //   </View>
     //   {/* </SafeAreaView> */}
     // </ScrollView>
-    <Box />
+    <ScrollView>
+      <Box />
+      <Chat />
+    </ScrollView>
   );
 }
 
