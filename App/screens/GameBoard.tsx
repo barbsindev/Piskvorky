@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 // import Chat from './Chat/Chat';
 import Round from './Circle';
+import Chat from './Chat/Chat';
 // import Box from './Box';
 
 export default function Board({ route }: any): any {
@@ -20,10 +21,14 @@ export default function Board({ route }: any): any {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 358a642cc83eba4677980ffb4d59739720fd2f0a
   const Box = () => {
     return (
       <View style={styles.box}>
         <Round />
+<<<<<<< HEAD
 =======
 export default function Board({ route }: any): any {
   return (
@@ -36,6 +41,8 @@ export default function Board({ route }: any): any {
         <Row />
         <Row />
 >>>>>>> master
+=======
+>>>>>>> 358a642cc83eba4677980ffb4d59739720fd2f0a
       </View>
     );
   };
@@ -57,7 +64,10 @@ export default function Board({ route }: any): any {
     //   </View>
     //   {/* </SafeAreaView> */}
     // </ScrollView>
-    <Box />
+    <ScrollView>
+      <Box />
+      <Chat />
+    </ScrollView>
   );
 }
 
