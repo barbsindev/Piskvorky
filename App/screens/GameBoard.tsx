@@ -1,33 +1,52 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+  ViewPropTypes,
+  ScrollView,
+} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
-import Chat from './Chat/Chat';
+// import Chat from './Chat/Chat';
+import Round from './Circle';
+// import Box from './Box';
 
-const Row = () => {
-  return (
-    <View style={styles.row}>
-      <View style={styles.box} />
-      <View style={styles.box} />
-      <View style={styles.box} />
-    </View>
-  );
-};
+export default function Board({ route }: any): any {
+  const handleEvent: any = (): any => {
+    console.log('Clicked box');
+  };
 
-export default const Board = ({ route }: any): any => {
-  return (
-    <View style={styles.container}>
-      <Chat />
-      <Text style={styles.player}>Player: {route.params.paramKey} </Text>
-      <View style={styles.board}>
-        <Row />
-        <Row />
-        <Row />
+  const Box = () => {
+    return (
+      <View style={styles.box}>
+        <Round />
       </View>
-      <FontAwesomeIcon icon={faComment} size={70} style={styles.icon} />
-    </View>
+    );
+  };
+  return (
+    // <ScrollView>
+    //   {/* <SafeAreaView> */}
+    //   <View style={styles.container}>
+    //     {/* <Chat /> */}
+    //     <Text style={styles.player}>Player: {route.params.paramKey} </Text>
+    //     <View style={styles.board}>
+    //       <TouchableOpacity onPress={handleEvent}>
+    //         <View style={styles.box}>
+    //           <Round />
+    //         </View>
+    //       </TouchableOpacity>
+
+    //       <FontAwesomeIcon icon={faComment} size={60} style={styles.icon} />
+    //     </View>
+    //   </View>
+    //   {/* </SafeAreaView> */}
+    // </ScrollView>
+    <Box />
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -37,15 +56,18 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 40,
   },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
+  // row: {
+  //   flexDirection: 'row',
+  //   justifyContent: 'center',
+  // },
+
   box: {
     width: 100,
     height: 100,
     borderWidth: 1,
     borderColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   player: {
     padding: 20,
@@ -54,8 +76,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    bottom: 50,
-    right: 30,
+    bottom: 0,
+    right: 0,
     color: '#27bdac',
   },
 });
