@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import Chat from './Chat/Chat';
 
+// ./components/theme.tsx for css constants
+// reusable components in ./compoments folder, add to them or use as they are
+
 const Row = () => {
   return (
     <View style={styles.row}>
