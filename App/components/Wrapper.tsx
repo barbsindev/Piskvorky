@@ -7,7 +7,7 @@ interface WrapperProps {
   alignItems?: string;
   display?: string;
   flexDirection?: string;
-  flex: number;
+  flex?: number;
 }
 
 export const Wrapper: React.FC<WrapperProps> = ({ children }) => {
